@@ -1,6 +1,6 @@
 ---
 name: test-results-analyzer
-description: Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements. Examples:\n\n<example>\nContext: Analyzing test suite results
+description: "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements. Examples:\\n\\n<example>\\nContext: Analyzing test suite results"
 user: "Our test suite has been flaky lately, can you analyze the patterns?"
 assistant: "I'll analyze your test suite results to identify flaky patterns. Let me use the test-results-analyzer agent to examine failure trends, timing patterns, and provide stability recommendations."
 <commentary>

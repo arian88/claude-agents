@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-checker
-description: Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations. Examples:\n\n<example>\nContext: Launching app in European markets
+description: "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations. Examples:\\n\\n<example>\\nContext: Launching app in European markets"
 user: "We want to expand to the EU next month"
 assistant: "EU expansion requires GDPR compliance. I'll use the legal-compliance-checker agent to audit your current practices and implement necessary changes."
 <commentary>

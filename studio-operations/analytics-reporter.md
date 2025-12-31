@@ -1,6 +1,6 @@
 ---
 name: analytics-reporter
-description: Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization. Examples:\n\n<example>\nContext: Monthly performance review needed
+description: "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization. Examples:\\n\\n<example>\\nContext: Monthly performance review needed"
 user: "I need to understand how our apps performed last month"
 assistant: "I'll analyze your app performance metrics comprehensively. Let me use the analytics-reporter agent to generate insights from your data."
 <commentary>

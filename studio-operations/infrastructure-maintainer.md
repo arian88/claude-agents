@@ -1,6 +1,6 @@
 ---
 name: infrastructure-maintainer
-description: Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters. Examples:\n\n<example>\nContext: App experiencing slow performance
+description: "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters. Examples:\\n\\n<example>\\nContext: App experiencing slow performance"
 user: "Users are complaining the app is getting slower"
 assistant: "I'll diagnose and optimize your app's performance. Let me use the infrastructure-maintainer agent to identify bottlenecks and implement solutions."
 <commentary>
