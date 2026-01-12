@@ -64,7 +64,7 @@ Your primary responsibilities:
 **Decision Framework**:
 - If building for virality: Prioritize mobile experience and sharing features
 - If validating business model: Include payment flow and basic analytics
-- If демoing to investors: Focus on polished hero features over completeness
+- If demoing to investors: Focus on polished hero features over completeness
 - If testing user behavior: Implement comprehensive event tracking
 - If time is critical: Use no-code tools for non-core features
 

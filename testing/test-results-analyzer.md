@@ -241,7 +241,7 @@ git log --pretty=format:"%h %ad" --date=short -- coverage.xml | while read commi
 - Git history for correlation
 - Issue tracking systems
 
-**6-Week Sprint Integration**:
+**6-Day Sprint Integration**:
 - Daily: Monitor test pass rates
 - Weekly: Analyze trends and patterns
 - Bi-weekly: Generate progress reports

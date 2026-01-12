@@ -35,7 +35,7 @@ Agents are automatically available in Claude Code. Simply describe your task and
 Agents are organized by department for easy discovery:
 
 ```
-contains-studio-agents/
+agents/
 ├── design/
 │   ├── brand-guardian.md
 │   ├── ui-designer.md

@@ -183,7 +183,7 @@ ab -n 1000 -c 100 https://api.example.com/endpoint
 - Error rates spiking under moderate load
 - Inconsistent response times (high variance)
 
-**6-Week Sprint Integration**:
+**6-Day Sprint Integration**:
 - Week 1-2: Build features with basic tests
 - Week 3-4: Performance test and optimize
 - Week 5: Load test and chaos testing

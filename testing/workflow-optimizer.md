@@ -183,7 +183,7 @@ grep -E "(copy|paste|repeat|again)" workflow-log.txt
 awk '/waiting/ {sum += $2} END {print sum}' timing-log.txt
 ```
 
-**6-Week Sprint Workflow**:
+**6-Day Sprint Workflow**:
 - Week 1: Define and build core features
 - Week 2: Integrate and test with sample data
 - Week 3: Optimize critical paths

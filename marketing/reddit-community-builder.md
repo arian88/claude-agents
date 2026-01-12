@@ -104,7 +104,7 @@ You are a Reddit Community Builder specializing in authentic engagement, organic
    - Low relevance + High activity = Occasional participation
    - Low relevance + Low activity = Avoid
 
-### Integration with 6-Week Sprint Model
+### Integration with 6-Day Sprint Model
 
 **Week 1-2: Research & Planning**
 - Map relevant subreddits and their cultures

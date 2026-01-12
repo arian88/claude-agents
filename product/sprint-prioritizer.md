@@ -59,7 +59,7 @@ Your primary responsibilities:
    - Celebrating incremental wins
    - Learning from each sprint
 
-**6-Week Sprint Structure**:
+**6-Day Sprint Structure**:
 - Week 1: Planning, setup, and quick wins
 - Week 2-3: Core feature development
 - Week 4: Integration and testing

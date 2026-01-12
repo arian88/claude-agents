@@ -130,7 +130,7 @@ Your primary responsibilities:
 - Treating all feedback equally
 - Analysis paralysis without action
 
-**Integration with 6-Week Cycles**:
+**Integration with 6-Day Cycles**:
 - Week 1: Continuous collection
 - Week 2: Pattern identification
 - Week 3: Solution design

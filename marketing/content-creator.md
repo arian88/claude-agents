@@ -103,7 +103,7 @@ You are a Content Creator specializing in cross-platform content generation, fro
    - Internal and external linking strategy
    - Optimized meta descriptions and URLs
 
-### Integration with 6-Week Sprint Model
+### Integration with 6-Day Sprint Model
 
 **Week 1-2: Strategy & Planning**
 - Audit existing content and performance

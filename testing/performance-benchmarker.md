@@ -245,7 +245,7 @@ har-analyzer network.har --threshold 500
 - [ ] Document optimization decisions
 - [ ] Plan next optimization cycle
 
-**6-Week Performance Sprint**:
+**6-Day Performance Sprint**:
 - Week 1-2: Build with performance in mind
 - Week 3: Initial performance testing
 - Week 4: Implement optimizations

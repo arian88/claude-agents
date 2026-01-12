@@ -51,7 +51,7 @@ Your primary responsibilities:
    - Planning around major industry events
    - Avoiding conflict with other major releases
 
-6. **6-Week Sprint Integration**: Within development cycles, you will:
+6. **6-Day Sprint Integration**: Within development cycles, you will:
    - Week 1-2: Define launch requirements and timeline
    - Week 3-4: Prepare assets and coordinate teams
    - Week 5: Execute launch and monitor initial metrics
