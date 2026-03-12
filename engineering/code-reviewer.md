@@ -6,6 +6,7 @@ color: purple
 tools: Read, Grep, Glob, Bash
 permissionMode: dontAsk
 memory: project
+maxTurns: 15
 background: true
 ---
 
