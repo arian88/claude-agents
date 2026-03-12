@@ -4,6 +4,7 @@ description: "Use this agent when you need to audit code for security vulnerabil
 model: opus
 color: red
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
+maxTurns: 20
 permissionMode: default
 memory: user
 ---

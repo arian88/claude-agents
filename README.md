@@ -6,15 +6,22 @@ A comprehensive collection of specialized AI agents designed to accelerate and e
 
 1. **Download this repository:**
    ```bash
-   git clone https://github.com/your-org/claude-agents.git
+   git clone https://github.com/arian88/claude-agents.git
    ```
 
 2. **Copy to your Claude Code agents directory:**
+
+   **User-level** (available in all projects):
    ```bash
    cp -r claude-agents/* ~/.claude/agents/
    ```
 
-   Or manually copy all the agent files to your `~/.claude/agents/` directory.
+   **Project-level** (scoped to a specific repo, checked into version control for team sharing):
+   ```bash
+   cp -r claude-agents/* .claude/agents/
+   ```
+
+   Use user-level (`~/.claude/agents/`) for personal agents you want everywhere. Use project-level (`.claude/agents/`) for agents shared with your team via the repo.
 
 3. **Restart Claude Code** to load the new agents.
 
@@ -49,10 +56,13 @@ agents/
 │   ├── ai-engineer.md
 │   ├── backend-architect.md
 │   ├── code-reviewer.md
+│   ├── codebase-onboarder.md
+│   ├── database-migration-agent.md
 │   ├── devops-automator.md
 │   ├── frontend-developer.md
 │   ├── mobile-app-builder.md
 │   ├── rapid-prototyper.md
+│   ├── refactoring-specialist.md
 │   ├── security-auditor.md
 │   └── test-writer-fixer.md
 ├── marketing/
@@ -77,6 +87,7 @@ agents/
 │   ├── analytics-reporter.md
 │   ├── data-analyst.md
 │   ├── finance-tracker.md
+│   ├── incident-responder.md
 │   ├── infrastructure-maintainer.md
 │   ├── legal-compliance-checker.md
 │   └── support-responder.md
@@ -97,10 +108,13 @@ agents/
 - **ai-engineer** - Integrate AI/ML features that actually ship
 - **backend-architect** - Design scalable APIs and server systems
 - **code-reviewer** - Automated code quality analysis with severity-rated feedback
+- **codebase-onboarder** - Explore and explain unfamiliar codebases with architecture maps and feature traces
+- **database-migration-agent** - Plan and execute zero-downtime database migrations with rollback strategies
 - **devops-automator** - Deploy continuously without breaking things
 - **frontend-developer** - Build blazing-fast user interfaces
 - **mobile-app-builder** - Create native iOS/Android experiences
 - **rapid-prototyper** - Build MVPs in days, not weeks
+- **refactoring-specialist** - Reduce tech debt and modernize code through safe, incremental refactoring
 - **security-auditor** - Identify vulnerabilities across OWASP Top 10 and dependencies
 - **test-writer-fixer** - Write tests that catch real bugs
 
@@ -137,6 +151,7 @@ agents/
 - **analytics-reporter** - Turn data into actionable insights
 - **data-analyst** - SQL queries, cohort analysis, and business intelligence
 - **finance-tracker** - Keep the business profitable
+- **incident-responder** - Diagnose production incidents, triage alerts, and write postmortems
 - **infrastructure-maintainer** - Scale without breaking the bank
 - **legal-compliance-checker** - Stay legal while moving fast
 - **support-responder** - Turn angry users into advocates
@@ -152,13 +167,14 @@ agents/
 - **studio-coach** - Rally the AI troops to excellence
 - **joker** - Lighten the mood with tech humor
 
-## Proactive Agents
+## Context-Triggered Agents
 
-Some agents trigger automatically in specific contexts:
-- **studio-coach** - When complex multi-agent tasks begin or agents need guidance
-- **test-writer-fixer** - After implementing features, fixing bugs, or modifying code
-- **whimsy-injector** - After UI/UX changes
-- **experiment-tracker** - When feature flags are added
+Claude Code selects agents based on how well the agent's `description` matches the user's intent. Agents with well-written descriptions — including detailed examples with context and commentary — are more reliably selected for the right tasks. The following agents have descriptions optimized for specific trigger contexts:
+
+- **studio-coach** - Selected when complex multi-agent tasks begin or coordination is needed
+- **test-writer-fixer** - Selected after implementing features, fixing bugs, or modifying code
+- **whimsy-injector** - Selected after UI/UX changes to add delight
+- **experiment-tracker** - Selected when feature flags or A/B tests are mentioned
 
 ## Best Practices
 
@@ -177,7 +193,7 @@ Each agent `.md` file starts with YAML front matter defining its configuration:
 |-------|----------|--------|-------------|
 | `name` | Yes | string | Unique agent identifier (kebab-case) |
 | `description` | Yes | string | When to use the agent, with examples |
-| `model` | No | `opus`, `sonnet`, `haiku`, `inherit` | AI model selection. Defaults to inherit. |
+| `model` | No | `opus`, `sonnet`, `haiku`, `inherit` | AI model selection. `opus` = Claude Opus 4.6, `sonnet` = Claude Sonnet 4.6, `haiku` = Claude Haiku 4.5. Defaults to inherit. |
 | `color` | No | `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, `cyan` | Visual identification in UI |
 | `tools` | No | comma-separated list | Tools the agent can access (e.g., `Read, Write, Edit, Bash, Grep, Glob, Agent, WebSearch, WebFetch, TaskCreate, TaskUpdate, TaskList, TaskGet`) |
 | `disallowedTools` | No | comma-separated list | Tools explicitly denied (useful when `tools` is omitted and agent inherits all) |
@@ -219,6 +235,15 @@ Common tools available to agents:
 | `TaskUpdate` | Update task status and details |
 | `TaskList` | List all tasks |
 | `TaskGet` | Get full task details by ID |
+| `TaskOutput` | Read output from background tasks |
+| `TaskStop` | Stop a running background task |
+| `NotebookEdit` | Edit Jupyter notebook cells |
+| `LSP` | Query language servers for code intelligence |
+| `Skill` | Invoke skills and slash commands |
+| `AskUserQuestion` | Prompt the user for input or decisions |
+| `CronCreate` | Create scheduled recurring tasks |
+| `CronDelete` | Delete scheduled tasks |
+| `CronList` | List active scheduled tasks |
 
 ### Adding New Agents
 
@@ -239,6 +264,21 @@ color: blue
 tools: Write, Read, Edit, Bash, Grep, Glob
 permissionMode: default
 memory: project
+# maxTurns: 20           # Optional: limit agentic turns
+# background: false      # Optional: run concurrently
+# isolation: worktree    # Optional: isolated git worktree
+# skills:                # Optional: skills available to agent
+#   - skill-name
+# mcpServers:            # Optional: MCP servers for agent
+#   playwright:
+#     command: npx
+#     args: ["-y", "@anthropic-ai/mcp-playwright"]
+# hooks:                 # Optional: lifecycle hooks
+#   PostToolUse:
+#     - matcher: "Write|Edit"
+#       hooks:
+#         - type: command
+#           command: "npm run lint --fix"
 ---
 
 You are a [role] who [primary function]. Your expertise spans [domains].
@@ -266,7 +306,7 @@ Agents can retain knowledge across sessions using the `memory` field:
 
 ### Background Agents
 
-Set `background: true` to let an agent run concurrently while you continue working. Ideal for read-only analysis tasks like code review. The `code-reviewer` agent uses this by default.
+Set `background: true` in an agent's frontmatter to run it concurrently by default. Any agent can also be run in the background per-invocation via the `run_in_background` parameter when using the `Agent` tool, regardless of its frontmatter setting. Ideal for read-only analysis tasks like code review. The `code-reviewer` agent uses this by default.
 
 ### `dontAsk` Permission Mode
 
@@ -278,7 +318,7 @@ Set `isolation: worktree` to run an agent in a temporary git worktree, giving it
 
 ### Agent Teams (Experimental)
 
-Multiple agents can be orchestrated together for complex tasks. The `studio-coach` and `studio-producer` agents are designed to coordinate multi-agent workflows using the `Agent` tool.
+Requires `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`. Agent Teams allow a lead agent to coordinate with teammate agents via shared task lists and peer messaging. This enables multi-agent workflows where agents collaborate on complex tasks. The `studio-coach` and `studio-producer` agents are designed to coordinate multi-agent workflows using the `Agent` tool. See the [Agent Teams documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents) for details.
 
 ### Agent-Scoped Hooks
 
@@ -287,6 +327,10 @@ Agents support lifecycle hooks for automation (e.g., running linters after edits
 ### `maxTurns`
 
 Limit the number of agentic turns an agent can take. Useful for agents with bounded tasks — for example, `joker` uses `maxTurns: 5` since humor delivery should be quick.
+
+### Modular Rules (`.claude/rules/`)
+
+Place `.md` files in `.claude/rules/` to define modular rules that load conditionally based on file path globs. This allows context-specific instructions (e.g., different coding standards for frontend vs backend files) without cluttering the main `CLAUDE.md`.
 
 ## Agent Performance
 
